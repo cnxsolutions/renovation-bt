@@ -1,0 +1,17 @@
+{
+  "name": "Rénovation BT - Couvreur Grand Est",
+  "short_name": "Rénovation BT",
+  "description": "Artisan couvreur à Écury-sur-Coole. Toiture, façade, gouttières dans tout le Grand Est.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
