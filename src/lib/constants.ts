@@ -72,5 +72,5 @@ export const SEO = {
   defaultDescription:
     "Artisan couvreur à Écury-sur-Coole (51240). Toiture, façade et gouttières dans le Grand Est. Devis gratuit sous 24h. Garantie décennale.",
   ogImage: "/og-image.jpg",
-  siteUrl: "https://artisan-boisson-teddy.fr",
+  siteUrl: "https://www.renovationbt-chalons.fr",
 } as const;
