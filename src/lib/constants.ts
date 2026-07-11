@@ -67,10 +67,10 @@ export const BUSINESS = {
 } as const;
 
 export const SEO = {
-  defaultTitle: "Couvreur Écury-sur-Coole (51) | Rénovation BT",
-  titleTemplate: "%s | Rénovation BT - Couvreur Grand Est",
+  defaultTitle: "Couvreur Châlons-en-Champagne | Rénovation BT",
+  titleTemplate: "%s | Rénovation BT",
   defaultDescription:
-    "Artisan couvreur à Écury-sur-Coole (51240). Toiture, façade et gouttières dans le Grand Est. Devis gratuit sous 24h. Garantie décennale.",
+    "Couvreur à Châlons-en-Champagne (51). Artisan couvreur pour toiture, zinguerie, démoussage. Devis gratuit sous 24h. Intervention rapide en Marne.",
   ogImage: "/og-image.jpg",
   siteUrl: "https://www.renovationbt-chalons.fr",
 } as const;

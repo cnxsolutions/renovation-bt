@@ -32,12 +32,10 @@ export function Hero() {
           {/* Left - Text content */}
           <div className="relative z-10 max-w-xl">
             <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
-              Couvreur à Châlons-en-Champagne
-              <br />
-              <span className="text-orange-500">Toiture, Zinguerie, Démoussage</span>
+              Couvreur <span className="text-orange-500">Châlons-en-Champagne</span>
             </h1>
             <p className="mt-2 text-xl font-semibold text-white/80 sm:text-2xl">
-              Artisan couvreur dans la Marne (51)
+              Toiture • Zinguerie • Démoussage • Marne 51
             </p>
 
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
