@@ -17,7 +17,7 @@ export function Hero() {
       {/* Background image */}
       <Image
         src="/images/hero-bg.webp"
-        alt="Couvreur professionnel travaillant sur une toiture"
+        alt="couvreur chalons en champagne - artisan toiture Marne"
         fill
         priority
         className="object-cover object-center"
@@ -32,7 +32,7 @@ export function Hero() {
           {/* Left - Text content */}
           <div className="relative z-10 max-w-xl">
             <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
-              Couvreur <span className="text-orange-500">Châlons-en-Champagne</span>
+              Couvreur <span className="text-orange-500">chalons en champagne</span>
             </h1>
             <p className="mt-2 text-xl font-semibold text-white/80 sm:text-2xl">
               Toiture • Zinguerie • Démoussage • Marne 51
@@ -72,7 +72,7 @@ export function Hero() {
           <div className="pointer-events-none absolute bottom-[-2rem] right-[2%] hidden w-[45%] lg:block xl:right-[5%] xl:w-[42%]">
             <Image
               src="/images/van.png"
-              alt="Camion Rénovation BT - Artisan couvreur"
+              alt="camion artisan couvreur chalons en champagne Marne"
               width={600}
               height={370}
               className="w-full drop-shadow-2xl"

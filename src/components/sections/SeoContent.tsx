@@ -4,14 +4,15 @@ import { CheckCircle } from "lucide-react";
 
 const seoContent = {
   whyChalons: {
-    title: "Couvreur Châlons-en-Champagne : votre artisan local",
+    title: "couvreur chalons en champagne : votre artisan local",
     paragraphs: [
-      "Basé à Écury-sur-Coole, à quelques minutes de Châlons-en-Champagne, Rénovation BT est votre artisan couvreur de confiance dans la Marne. Nous connaissons parfaitement les spécificités climatiques de notre région : hivers rigoureux, étés orageux, variations de température qui sollicitent vos toitures.",
-      "En tant que couvreur à Châlons-en-Champagne, nous avons accompagné des centaines de propriétaires pour la rénovation, l'entretien ou la réparation de leur toiture. Notre expertise locale nous permet de vous proposer des solutions adaptées à chaque situation.",
+      "Vous cherchez un couvreur chalons en champagne fiable pour votre projet de toiture ? Basé à Écury-sur-Coole, à quelques minutes de Châlons-en-Champagne, Rénovation BT est votre artisan couvreur de confiance dans la Marne.",
+      "En tant que couvreur chalons en champagne, nous connaissons parfaitement les spécificités climatiques de notre région : hivers rigoureux, étés orageux, variations de température qui sollicitent vos toitures. Cette expertise locale nous permet de vous proposer des solutions adaptées.",
+      "Notre entreprise de couverture à Châlons-en-Champagne a accompagné des centaines de propriétaires pour la rénovation, l'entretien ou la réparation de leur toiture. Appelez notre couvreur chalons en champagne pour un diagnostic gratuit.",
     ],
   },
   services: {
-    title: "Nos prestations de couvreur à Châlons-en-Champagne",
+    title: "Prestations couvreur chalons en champagne",
     items: [
       "Rénovation complète de toiture en tuiles, ardoises ou bac acier",
       "Pose et réparation de zinguerie : gouttières, solins, chéneaux",
@@ -22,7 +23,7 @@ const seoContent = {
     ],
   },
   whyUs: {
-    title: "Pourquoi choisir notre entreprise de couverture à Châlons ?",
+    title: "Pourquoi choisir notre couvreur chalons en champagne ?",
     reasons: [
       { title: "Proximité", desc: "Basés à Écury-sur-Coole, nous intervenons sous 2h à Châlons" },
       { title: "Expérience", desc: "+10 ans d'expérience en couverture dans la Marne" },
