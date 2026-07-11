@@ -257,15 +257,15 @@ export default async function CityPage({ params }: CityPageProps) {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-orange-100 to-orange-50">
+            <div className="relative min-h-[320px]">
+              <div className="flex h-[280px] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-orange-100 to-orange-50">
                 <div className="text-center">
                   <div className="mb-4 text-6xl">🏗️</div>
                   <div className="text-4xl font-bold text-orange-600">+500</div>
                   <div className="text-gray-600">toitures rénovées</div>
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 rounded-xl bg-white p-4 shadow-xl">
+              <div className="absolute -bottom-4 -right-4 min-w-[160px] rounded-xl bg-white p-4 shadow-xl">
                 <div className="flex items-center gap-2">
                   <div className="flex">{[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-orange-400 text-orange-400" />)}</div>
                   <div>
@@ -330,12 +330,15 @@ export default async function CityPage({ params }: CityPageProps) {
             Nous trouver - Rénovation BT {city.name}
           </h2>
           <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-lg">
-            <iframe
-              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42595.7!2d${BUSINESS.geo.longitude}!3d${BUSINESS.geo.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zRMOpY3VyeS1zdXItQ29vbGUK!5e0!3m2!1sfr!2sfr!4v1`}
-              width="100%" height="400" style={{ border: 0 }}
-              allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              title={`Localisation Rénovation BT - ${city.name}`}
-            />
+            <div className="aspect-[16/9] w-full sm:aspect-[21/9]">
+              <iframe
+                className="h-full w-full"
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42595.7!2d${BUSINESS.geo.longitude}!3d${BUSINESS.geo.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zRMOpY3VyeS1zdXItQ29vbGUK!5e0!3m2!1sfr!2sfr!4v1`}
+                style={{ border: 0 }}
+                allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                title={`Localisation Rénovation BT - ${city.name}`}
+              />
+            </div>
           </div>
           <p className="mt-4 text-center text-sm text-gray-500">
             Rénovation BT - {BUSINESS.address.street}, {BUSINESS.address.city} ({BUSINESS.address.postalCode})
