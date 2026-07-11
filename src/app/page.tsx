@@ -9,9 +9,9 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { SeoContent } from "@/components/sections/SeoContent";
 
 export const metadata: Metadata = {
-  title: "Couvreur chalons en champagne | Artisan Toiture, Zingueur Marne",
+  title: "Couvreur Châlons-en-Champagne | Artisan Toiture, Zingueur Marne",
   description:
-    "couvreur chalons en champagne - Artisan couvreur Marne. Rénovation toiture, zinguerie, démoussage, urgence. Devis gratuit 24h.",
+    "Couvreur Châlons-en-Champagne - Artisan couvreur Marne pour rénovation toiture, zinguerie, démoussage. Devis gratuit 24h.",
   keywords: [
     "couvreur chalons en champagne",
     "couvreur Marne",

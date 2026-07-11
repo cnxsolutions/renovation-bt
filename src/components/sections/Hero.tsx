@@ -17,7 +17,7 @@ export function Hero() {
       {/* Background image */}
       <Image
         src="/images/hero-bg.webp"
-        alt="couvreur chalons en champagne - artisan toiture Marne"
+        alt="Couvreur Châlons-en-Champagne - Artisan toiture Marne"
         fill
         priority
         className="object-cover object-center"
@@ -31,11 +31,11 @@ export function Hero() {
         <div className="relative min-h-[420px] lg:min-h-[460px]">
           {/* Left - Text content */}
           <div className="relative z-10 max-w-xl">
-            <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
-              Couvreur <span className="text-orange-500">chalons en champagne</span>
+            <h1 className="text-4xl font-extrabold uppercase tracking-wide text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
+              Couvreur <span className="text-orange-500">Châlons-en-Champagne</span>
             </h1>
-            <p className="mt-2 text-xl font-semibold text-white/80 sm:text-2xl">
-              Toiture • Zinguerie • Démoussage • Marne 51
+            <p className="mt-3 text-lg font-medium uppercase tracking-wider text-white/70 sm:text-xl">
+              Artisan couvreur Marne (51)
             </p>
 
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
@@ -72,7 +72,7 @@ export function Hero() {
           <div className="pointer-events-none absolute bottom-[-2rem] right-[2%] hidden w-[45%] lg:block xl:right-[5%] xl:w-[42%]">
             <Image
               src="/images/van.png"
-              alt="camion artisan couvreur chalons en champagne Marne"
+              alt="Camion artisan couvreur Châlons-en-Champagne Marne"
               width={600}
               height={370}
               className="w-full drop-shadow-2xl"
