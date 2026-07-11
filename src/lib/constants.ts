@@ -9,7 +9,7 @@ export const BUSINESS = {
   email: "contact@artisan-boisson-teddy.fr",
   website: "https://artisan-boisson-teddy.fr",
   address: {
-    street: "",
+    street: "43 Rue de Châlons-sur-Marne",
     city: "Écury-sur-Coole",
     postalCode: "51240",
     region: "Grand Est",

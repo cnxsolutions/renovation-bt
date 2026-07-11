@@ -29,6 +29,7 @@ export function JsonLd() {
         hasMap: BUSINESS.hasMap,
         address: {
           "@type": "PostalAddress",
+          streetAddress: "43 Rue de Châlons-sur-Marne",
           addressLocality: BUSINESS.address.city,
           postalCode: BUSINESS.address.postalCode,
           addressRegion: BUSINESS.address.region,
