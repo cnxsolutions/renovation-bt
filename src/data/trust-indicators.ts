@@ -16,7 +16,7 @@ export const trustIndicators = [
   },
   {
     icon: "map-pin" as const,
-    title: "Intervention dans",
-    description: "tout le Grand Est",
+    title: "Intervention en",
+    description: "Marne (51)",
   },
 ] as const;

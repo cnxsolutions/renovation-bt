@@ -30,21 +30,24 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: "Toitures", href: "/services#toitures" },
-    { label: "Façades", href: "/services#facades" },
-    { label: "Gouttières", href: "/services#gouttieres" },
-    { label: "Nettoyage & Démoussage", href: "/services#nettoyage" },
-    { label: "Zinguerie", href: "/services#zinguerie" },
+    { label: "Zingueur Châlons", href: "/zingueur-chalons-en-champagne" },
+    { label: "Démoussage toiture", href: "/demoussage-toiture-chalons" },
+    { label: "Nettoyage toiture", href: "/nettoyage-toiture-chalons" },
+    { label: "Gouttières", href: "/gouttieres-chalons" },
+    { label: "Charpente", href: "/charpente-chalons" },
+    { label: "Velux & Fenêtres", href: "/velux-chalons" },
+    { label: "Urgence toiture", href: "/reparation-fuite-toiture-chalons" },
+    { label: "Hydrofuge", href: "/hydrofuge-toiture-chalons" },
   ],
   zones: [
-    { label: "Couvreur Châlons-en-Champagne", href: "/couvreur/chalons-en-champagne" },
+    { label: "Couvreur Châlons-en-Champagne", href: "/couvreur-chalons-en-champagne" },
     { label: "Couvreur Reims", href: "/couvreur/reims" },
     { label: "Couvreur Épernay", href: "/couvreur/epernay" },
-    { label: "Couvreur Troyes", href: "/couvreur/troyes" },
-    { label: "Couvreur Nancy", href: "/couvreur/nancy" },
-    { label: "Couvreur Metz", href: "/couvreur/metz" },
-    { label: "Couvreur Strasbourg", href: "/couvreur/strasbourg" },
-    { label: "Couvreur Épinal", href: "/couvreur/epinal" },
+    { label: "Couvreur Vitry-le-François", href: "/couvreur/vitry-le-francois" },
+    { label: "Couvreur Saint-Memmie", href: "/couvreur-saint-memmie" },
+    { label: "Couvreur Fagnières", href: "/couvreur-fagnieres" },
+    { label: "Couvreur Mourmelon", href: "/couvreur-mourmelon-le-grand" },
+    { label: "Couvreur Courtisols", href: "/couvreur-courtisols" },
   ],
 };
 
@@ -65,7 +68,7 @@ export function Footer() {
               <span className="text-xl font-bold uppercase text-white">Renovation BT</span>
             </div>
             <p className="mb-6 text-sm leading-relaxed text-gray-400">
-              Votre artisan couvreur à Écury-sur-Coole et dans tout le Grand Est. Devis et déplacement gratuits.
+              Votre artisan couvreur à Écury-sur-Coole, intervenant à Châlons-en-Champagne et dans toute la Marne (51). Devis et déplacement gratuits.
             </p>
             <div className="flex gap-4">
               <a

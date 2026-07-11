@@ -5,16 +5,25 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
-import { citiesWithPages, cities } from "@/data/cities";
+import { cities, citiesWithPages } from "@/data/cities";
 import { BUSINESS, SEO } from "@/lib/constants";
 import { services } from "@/data/services";
+
+// Villes qui ont une page SEO dédiée (à éviter dans la route dynamique)
+import { seoPages } from "@/data/seo-pages";
+const staticCitySlugs = seoPages
+  .filter((p) => p.type === "city" || p.type === "main-city")
+  .map((p) => p.citySlug);
 
 interface CityPageProps {
   params: Promise<{ city: string }>;
 }
 
 export function generateStaticParams() {
-  return citiesWithPages.map((city) => ({ city: city.slug }));
+  // On génère seulement les pages pour les villes QUI N'ONT PAS de page statique
+  return citiesWithPages
+    .filter((city) => !staticCitySlugs.includes(city.slug))
+    .map((city) => ({ city: city.slug }));
 }
 
 export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
@@ -92,7 +101,11 @@ function getNearbyCities(currentSlug: string) {
 export default async function CityPage({ params }: CityPageProps) {
   const { city: slug } = await params;
   const city = citiesWithPages.find((c) => c.slug === slug);
-  if (!city) notFound();
+
+  // Si la ville a une page SEO dédiée, on affiche 404 pour éviter le duplicate content
+  if (!city || staticCitySlugs.includes(city.slug)) {
+    notFound();
+  }
 
   const nearby = getNearbyCities(slug);
 

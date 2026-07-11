@@ -32,12 +32,12 @@ export function Hero() {
           {/* Left - Text content */}
           <div className="relative z-10 max-w-xl">
             <h1 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
-              Couvreur professionnel
+              Couvreur à Châlons-en-Champagne
               <br />
-              <span className="text-orange-500">à Écury-sur-Coole</span>
+              <span className="text-orange-500">Toiture, Zinguerie, Démoussage</span>
             </h1>
             <p className="mt-2 text-xl font-semibold text-white/80 sm:text-2xl">
-              et dans tout le Grand Est
+              Artisan couvreur dans la Marne (51)
             </p>
 
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
@@ -53,8 +53,7 @@ export function Hero() {
             </div>
 
             <p className="mt-6 max-w-md text-base leading-relaxed text-gray-200">
-              Rénovation BT vous accompagne pour tous vos travaux de toiture,
-              façade et gouttières. Un artisan de confiance à votre service !
+              Rénovation BT, artisan couvreur basé à Écury-sur-Coole, intervient rapidement à Châlons-en-Champagne et dans toute la Marne pour vos travaux de toiture, façade et gouttières.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
