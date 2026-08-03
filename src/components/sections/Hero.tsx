@@ -57,23 +57,27 @@ export function Hero() {
           {/* ---------------------------------------------------------------- */}
           <div>
             {/*
-              H1 en DEUX REGISTRES dans un seul element.
-              Ligne 1 : la requete tete, intacte et en position de tete.
-              Ligne 2 : ce qu'aucun annuaire, aucun courtier de leads et aucune
-              entreprise remoise ne peut ecrire — le nom de la personne qui
-              monte sur le toit. Le `<span class="block">` absorbe la ligne
-              d'identite qui suivait le H1 : deux registres, une seule balise,
-              48 px de gagnes au-dessus de la ligne de flottaison.
+              LE H1 NE PORTE QUE LE SUJET DE LA PAGE — 31 caracteres.
+
+              La signature de l'artisan vivait a l'interieur du <h1>, dans un
+              <span class="block>. Le rendu etait le bon, mais le titre de
+              niveau 1 pesait alors 66 caracteres et melangeait deux choses de
+              nature differente : le SUJET de la page (« couvreur a
+              Chalons-en-Champagne ») et l'IDENTITE de celui qui l'exerce. Un
+              h1 repond a « de quoi parle cette page », pas a « qui l'ecrit ».
+
+              La ligne d'identite est donc redevenue un paragraphe, place
+              immediatement apres et strictement identique a l'oeil : memes
+              classes, meme rythme vertical. Ce qu'aucun annuaire ni courtier
+              de leads ne peut ecrire — le nom de la personne qui monte sur le
+              toit — reste au-dessus de la ligne de flottaison.
             */}
             <h1 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
-              Couvreur à Châlons-en-Champagne{" "}
-              {/* Espace explicite : JSX supprime le retour a la ligne, et sans
-                  lui le texte accessible se lit « ChampagneTeddy » d'un seul
-                  tenant — le <span> est en `block`, l'espace ne se voit pas. */}
-              <span className="mt-3 block text-lg font-semibold text-orange-500 sm:text-xl">
-                {BUSINESS.operatorName}, artisan {BUSINESS.experience}
-              </span>
+              Couvreur à Châlons-en-Champagne
             </h1>
+            <p className="mt-3 text-lg font-semibold text-orange-500 sm:text-xl">
+              {BUSINESS.operatorName}, artisan {BUSINESS.experience}
+            </p>
 
             {/*
               Le visiteur en detresse decide en deux secondes si la page est
@@ -142,7 +146,7 @@ export function Hero() {
             <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl bg-gray-800">
               <Image
                 src={IMAGE_LCP.src}
-                alt={`Réfection de toiture menée à Châlons-en-Champagne par ${BUSINESS.operatorName}`}
+                alt={`Couvreur à Châlons-en-Champagne : réfection de toiture menée par ${BUSINESS.operatorName}`}
                 width={IMAGE_LCP.width}
                 height={IMAGE_LCP.height}
                 priority

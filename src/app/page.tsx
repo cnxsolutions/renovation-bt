@@ -45,7 +45,7 @@ import {
  * d'etablissement (`BUSINESS.name` = « BOISSON Teddy | RENOVATIONBT ») dans le
  * meme ordre. Un visiteur venu de la fiche reconnait l'entite avant de cliquer.
  */
-const PAGE_TITLE = `Couvreur Châlons-en-Champagne, ${BUSINESS.operatorName}`;
+const PAGE_TITLE = `Couvreur à Châlons-en-Champagne, ${BUSINESS.operatorName}`;
 
 /**
  * DESCRIPTION — 156 caracteres, dans la borne 70-160.
@@ -55,7 +55,7 @@ const PAGE_TITLE = `Couvreur Châlons-en-Champagne, ${BUSINESS.operatorName}`;
  * « Devis et déplacement gratuits » est la graphie EXACTE de la fiche : la
  * coherence du NAP se joue aussi dans les extraits de resultats.
  */
-const PAGE_DESCRIPTION = `${BUSINESS.operatorName}, couvreur à ${DISTANCE_CENTRE_CHALONS_KM} km de Châlons-en-Champagne ${BUSINESS.experience} : toiture, zinguerie, gouttières. Chantiers photographiés, ${DEVIS_ET_DEPLACEMENT.toLowerCase()}.`;
+const PAGE_DESCRIPTION = `Couvreur à Châlons-en-Champagne : ${BUSINESS.operatorName}, artisan ${BUSINESS.experience}. Toiture, zinguerie, gouttières, chantiers photographiés. ${DEVIS_ET_DEPLACEMENT}.`;
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
