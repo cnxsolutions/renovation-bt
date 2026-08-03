@@ -9,7 +9,30 @@
   --color-orange-500: #F97316;
   --color-orange-600: #EA580C;
   --color-orange-700: #C2410C;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  /*
+   * `var(--font-inter)` D'ABORD, et ce n'est pas cosmetique.
+   *
+   * next/font genere, en plus de la police, un substitut local a metriques
+   * ajustees :
+   *   @font-face { font-family: "Inter Fallback"; src: local(Arial);
+   *                ascent-override: 90.44%; descent-override: 22.52%;
+   *                size-adjust: 107.12% }
+   *   --font-inter: "Inter", "Inter Fallback"
+   *
+   * La declaration precedente — « "Inter", system-ui, … » — court-circuitait
+   * cette variable et retombait sur `system-ui`, qui n'a AUCUN override de
+   * metriques. Avec `font-display: swap`, tout le texte se remettait donc en
+   * page a l'arrivee d'Inter, vers 3 000-3 400 ms : c'est la cause mesuree du
+   * CLS de 0,1695 sur la page ville (seuil Google : 0,1).
+   *
+   * Ce que ca explique, et qui a longtemps fait accuser la carte Google Maps a
+   * tort : le decalage survient APRES le LCP, et les elements qui bougent sont
+   * ceux places SOUS le h1 et le paragraphe du hero — ces deux-la grandissent
+   * vers le bas, leur bord superieur ne bouge pas, ils n'apparaissent donc
+   * jamais dans la liste des elements decales. L'accueil etait epargne
+   * uniquement parce que son Hero porte un `min-h` qui absorbait la croissance.
+   */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 body {

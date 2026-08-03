@@ -72,7 +72,7 @@ export function ContactForm() {
             id="lastName"
             type="text"
             {...register("lastName", { required: "Ce champ est requis" })}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700"
             placeholder="Votre nom"
           />
           {errors.lastName && (
@@ -87,7 +87,7 @@ export function ContactForm() {
             id="firstName"
             type="text"
             {...register("firstName", { required: "Ce champ est requis" })}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700"
             placeholder="Votre prénom"
           />
           {errors.firstName && (
@@ -108,7 +108,7 @@ export function ContactForm() {
               required: "Ce champ est requis",
               pattern: { value: /^\S+@\S+$/i, message: "Email invalide" },
             })}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700"
             placeholder="votre@email.fr"
           />
           {errors.email && (
@@ -123,7 +123,7 @@ export function ContactForm() {
             id="phone"
             type="tel"
             {...register("phone", { required: "Ce champ est requis" })}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700"
             placeholder="06 XX XX XX XX"
           />
           {errors.phone && (
@@ -140,7 +140,7 @@ export function ContactForm() {
           <select
             id="service"
             {...register("service")}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700"
           >
             <option value="">Sélectionnez un service</option>
             <option value="toiture">Toiture</option>
@@ -159,7 +159,7 @@ export function ContactForm() {
             id="city"
             type="text"
             {...register("city")}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700"
             placeholder="Votre ville"
           />
         </div>
@@ -173,7 +173,7 @@ export function ContactForm() {
           id="message"
           rows={5}
           {...register("message", { required: "Ce champ est requis" })}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:border-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-700"
           placeholder="Décrivez votre projet ou votre besoin..."
         />
         {errors.message && (

@@ -1,7 +1,21 @@
 import { ImageResponse } from "next/og";
+import { BUSINESS } from "@/lib/constants";
 
+/**
+ * Image Open Graph du site, servie sur /opengraph-image — c'est la valeur de
+ * SEO.ogImage. L'ancienne valeur, /og-image.jpg, ne correspondait a aucun
+ * fichier et renvoyait 404 : toutes les previsualisations de partage etaient
+ * vides.
+ *
+ * Les textes ci-dessous ont ete alignes sur src/lib/constants.ts :
+ *  - « Grand Est » remplace par la Marne. La region s'etend jusqu'a
+ *    Strasbourg, alors que BUSINESS.serviceRadius vaut 60 km.
+ *  - « Garantie décennale » retire : LEGAL.decennale est entierement `null`.
+ *  - le numero de telephone vient de BUSINESS.phone, il n'est plus recopie.
+ */
 export const runtime = "edge";
-export const alt = "Rénovation BT - Couvreur professionnel à Écury-sur-Coole - Grand Est";
+export const alt =
+  "Rénovation BT - Artisan couvreur à Écury-sur-Coole, Châlons-en-Champagne et Marne (51)";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -75,7 +89,7 @@ export default async function Image() {
                 letterSpacing: "3px",
               }}
             >
-              Rénovation et Entretien
+              {BUSINESS.tagline}
             </span>
           </div>
         </div>
@@ -88,7 +102,7 @@ export default async function Image() {
             marginBottom: "16px",
           }}
         >
-          Couvreur professionnel - Grand Est
+          Couvreur à Châlons-en-Champagne et dans la Marne
         </div>
 
         <div
@@ -112,10 +126,14 @@ export default async function Image() {
           }}
         >
           <span style={{ fontSize: "24px", fontWeight: "bold", color: "white" }}>
-            07 61 54 53 43
+            {BUSINESS.phone}
           </span>
         </div>
 
+        {/*
+          Une SEULE expression, pas du texte entrecoupe d'accolades : satori
+          exige `display: flex` des qu'un <div> a plusieurs noeuds enfants.
+        */}
         <div
           style={{
             position: "absolute",
@@ -124,7 +142,7 @@ export default async function Image() {
             color: "#6b7280",
           }}
         >
-          Écury-sur-Coole (51240) • Devis gratuit • Garantie décennale
+          {`${BUSINESS.address.city} (${BUSINESS.address.postalCode}) • Devis gratuit • ${BUSINESS.experience}`}
         </div>
       </div>
     ),

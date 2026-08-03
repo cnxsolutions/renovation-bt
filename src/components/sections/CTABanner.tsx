@@ -1,26 +1,67 @@
-import { Phone } from "lucide-react";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { BUSINESS } from "@/lib/constants";
+import { PhoneLink } from "@/components/ui/PhoneLink";
+import { HORAIRES_COMPLETS } from "./business-facts";
 
-export function CTABanner() {
+interface CTABannerProps {
+  /** Titre du bloc. Rendu en `<h2>`. */
+  title?: string;
+  /** Ligne sous le titre. */
+  subtitle?: string;
+}
+
+/**
+ * Appel a l'action de bas de page, monte sur onze pages du site.
+ *
+ * DEUX CORRECTIONS DE FOND, QUI PROFITENT AUX ONZE PAGES
+ *
+ *  1. « Contactez-nous des maintenant, nous vous repondons RAPIDEMENT ! »
+ *     disparait. C'est une promesse de delai deguisee, que rien ne mesure ni
+ *     n'engage — exactement ce que le reste du site s'interdit. Elle est
+ *     remplacee par un fait : l'amplitude d'ouverture, et la porte de sortie du
+ *     dimanche.
+ *  2. Le lien telephone reimplemente a la main laisse la place a
+ *     `ui/PhoneLink`, qui porte deja le bon `aria-label`, le bon contraste
+ *     (orange-700 sur blanc, 5,18:1) et le bon anneau de focus.
+ *
+ * Les props sont FACULTATIVES : sans elles, le composant rend le meme bloc
+ * qu'avant sur `/realisations`, `/conseils`, `/services`, les pages ville et le
+ * reste du site. Seule la page d'accueil passe son propre titre, pour que son
+ * H2 porte une decision et non un intitule de rubrique.
+ *
+ * PAS DE « nous vous rappelons des lundi » : ce serait, a nouveau, un delai
+ * garanti.
+ */
+export function CTABanner({ title, subtitle }: CTABannerProps) {
   return (
     <section className="py-12">
       <Container>
-        <div className="rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-12 text-center shadow-lg sm:px-16">
+        <div className="rounded-2xl bg-gradient-to-r from-orange-700 to-orange-800 px-8 py-12 text-center shadow-lg sm:px-16">
           <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl">
-            Besoin d&apos;un devis ou d&apos;une intervention ?
+            {title ?? "Besoin d'un devis ou d'une intervention ?"}
           </h2>
-          <p className="mb-8 text-orange-100">
-            Contactez-nous dès maintenant, nous vous répondons rapidement !
+          <p className="mb-8 text-orange-50">
+            {subtitle ??
+              "Décrivez votre toiture au téléphone, ou laissez votre demande par écrit."}
           </p>
-          <a
-            href={BUSINESS.phoneHref}
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white px-8 py-4 text-lg font-bold text-orange-500 transition-colors hover:bg-orange-50"
-            aria-label={`Appeler au ${BUSINESS.phone}`}
-          >
-            <Phone className="h-5 w-5" aria-hidden="true" />
-            {BUSINESS.phone}
-          </a>
+
+          {/* Le numero en chiffres, en premier et en grand. */}
+          <div className="flex justify-center">
+            <PhoneLink variant="white" className="px-8 py-4 text-lg" />
+          </div>
+
+          <p className="mt-4 text-sm text-orange-50">{HORAIRES_COMPLETS}</p>
+
+          <p className="mt-6 text-sm text-orange-50">
+            Le dimanche, l&apos;entreprise est fermée :{" "}
+            <Link
+              href="/contact"
+              className="font-semibold text-white underline underline-offset-4 hover:no-underline"
+            >
+              laissez votre demande par le formulaire
+            </Link>
+            .
+          </p>
         </div>
       </Container>
     </section>

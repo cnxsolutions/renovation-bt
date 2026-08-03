@@ -5,10 +5,19 @@ import { ContactForm } from "@/components/forms/ContactForm";
 import { BUSINESS } from "@/lib/constants";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 
+/**
+ * Titre inchange : 32 caracteres, 48 avec le gabarit du layout, donc dans la
+ * borne MET-005 (30-60). « Devis gratuit » est adosse a
+ * LEGAL.pricing.quoteIsFree, qui vaut `true`.
+ *
+ * « dans tout le Grand Est » retire de la description : la region va jusqu'a
+ * Strasbourg, alors que BUSINESS.serviceRadius vaut 60 km depuis
+ * Ecury-sur-Coole.
+ */
 export const metadata: Metadata = {
-  title: "Contact - Devis gratuit sous 24h",
+  title: "Contact — Devis gratuit et sans engagement",
   description:
-    "Demandez un devis gratuit à Rénovation BT. Artisan couvreur à Écury-sur-Coole (51240). Intervention rapide dans tout le Grand Est. Appelez le 07 61 54 53 43.",
+    "Demandez votre devis gratuit à Rénovation BT, artisan couvreur à Écury-sur-Coole (51240). Intervention dans la Marne et les alentours. Tél. 07 61 54 53 43.",
   alternates: { canonical: "/contact" },
 };
 
@@ -27,7 +36,7 @@ export default function ContactPage() {
             <div className="mb-12 text-center">
               <h1 className="mb-4 text-4xl font-bold text-gray-900">Contactez-nous</h1>
               <p className="text-lg text-gray-600">
-                Demandez votre devis gratuit ou posez-nous vos questions. Nous répondons sous 24h.
+                Demandez votre devis gratuit ou posez-nous vos questions.
               </p>
             </div>
 

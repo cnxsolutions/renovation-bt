@@ -46,7 +46,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-orange-50 hover:text-orange-500"
+              className="rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-orange-50 hover:text-orange-700"
               onClick={onClose}
             >
               {item.label}
@@ -57,7 +57,8 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         <div className="mt-8 border-t border-gray-100 pt-6">
           <a
             href={BUSINESS.phoneHref}
-            className="flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-base font-semibold text-white hover:bg-orange-600"
+            className="flex items-center justify-center gap-2 rounded-lg bg-orange-700 px-6 py-3 text-base font-semibold text-white hover:bg-orange-800"
+            aria-label={`Appeler au ${BUSINESS.phone}`}
           >
             <Phone className="h-5 w-5" aria-hidden="true" />
             {BUSINESS.phone}

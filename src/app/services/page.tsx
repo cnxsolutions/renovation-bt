@@ -4,12 +4,25 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
-import { SEO } from "@/lib/constants";
+import { serializeJsonLd } from "@/components/seo/serializeJsonLd";
+import { BUSINESS, SEO } from "@/lib/constants";
 
+/**
+ * Ancien titre : « Services » — 8 caracteres, tres en dessous de la borne
+ * MET-005 (30-60 sur le titre propre a la page). Il ne disait ni le metier ni
+ * les prestations, et rendait « Services | Rénovation BT » dans les resultats.
+ * Nouveau titre : 44 caracteres, 60 avec le gabarit du layout, et il nomme les
+ * trois familles de prestations reellement decrites sur la page.
+ *
+ * La description ne mentionne plus la garantie decennale : LEGAL.decennale
+ * (assureur, numero de police, etendue) est entierement a `null`, donc la
+ * mention n'est adossee a aucune donnee verifiee. Elle reviendra le jour ou
+ * l'attestation sera renseignee.
+ */
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Nos services : toiture, façade et gouttières",
   description:
-    "Découvrez nos services : toiture, façade, gouttières, nettoyage, démoussage et zinguerie. Artisan qualifié à Écury-sur-Coole, garantie décennale, devis gratuit.",
+    "Réfection de toiture, ravalement de façade, pose et entretien de gouttières, démoussage et zinguerie. Artisan couvreur à Écury-sur-Coole (51), devis gratuit.",
   alternates: { canonical: "/services" },
 };
 
@@ -58,13 +71,27 @@ const serviceDetails = [
   },
 ];
 
+/**
+ * `areaServed` etait un noeud `State` « Grand Est ». Revendiquer une region qui
+ * s'etend jusqu'a Strasbourg (plus de 300 km) alors que
+ * `BUSINESS.serviceRadius` vaut 60 km etait contradictoire dans le meme
+ * document, et une zone invraisemblable dilue la pertinence locale au lieu de
+ * l'elargir. La zone est desormais DERIVEE de `BUSINESS.departments`, comme
+ * dans le JSON-LD du layout : une seule source, donc pas de derive possible.
+ */
 function ServiceSchemaJsonLd() {
+  const areaServed = BUSINESS.departments.map((department) => ({
+    "@type": "AdministrativeArea",
+    // « Marne (51) » est une etiquette d'interface, pas un nom de territoire.
+    name: department.replace(/\s*\(\d+\)\s*$/, ""),
+  }));
+
   const schemas = serviceDetails.map((service) => ({
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: service.title,
     provider: { "@id": `${SEO.siteUrl}/#business` },
-    areaServed: { "@type": "State", name: "Grand Est" },
+    areaServed,
     description: service.description,
     name: `${service.title} - Rénovation BT`,
   }));
@@ -72,7 +99,7 @@ function ServiceSchemaJsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(schemas) }}
     />
   );
 }

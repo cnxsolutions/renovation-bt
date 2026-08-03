@@ -1,6 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { CheckCircle, MapPin, Clock, Shield, Award, Phone } from "lucide-react";
-import Link from "next/link";
+import { MapPin, Clock, Shield, Award, Phone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BUSINESS } from "@/lib/constants";
 
@@ -9,7 +8,13 @@ const whyChalons = {
   paragraphs: [
     "Basé à Écury-sur-Coole, à quelques minutes de Châlons-en-Champagne, Rénovation BT est votre artisan couvreur de confiance dans la Marne. Spécialiste couvreur chalons en champagne, nous intervenons rapidement pour tous vos projets.",
     "En tant que couvreur à Châlons-en-Champagne, nous connaissons parfaitement les spécificités climatiques de notre région : hivers rigoureux, étés orageux, variations de température qui sollicitent vos toitures.",
-    "Notre entreprise de couverture à Châlons-en-Champagne a accompagné des centaines de propriétaires pour la rénovation, l'entretien ou la réparation de leur toiture.",
+    /*
+     * L'ancienne redaction annoncait « des centaines de proprietaires
+     * accompagnes ». Ce chiffre ne repose sur aucune source : l'entreprise est
+     * un artisan sans salarie. Il est remplace par un fait verifiable, la date
+     * de creation au registre national des entreprises.
+     */
+    `Entreprise artisanale de couverture installée dans la Marne ${BUSINESS.experience}, Rénovation BT prend en charge la rénovation, l'entretien et la réparation de votre toiture.`,
   ],
 };
 
@@ -18,15 +23,33 @@ const services = [
   { name: "Zinguerie", desc: "Gouttières, solins, chéneaux, noues, habillage de rive" },
   { name: "Démoussage", desc: "Nettoyage haute pression, traitement anti-mousse, hydrofuge" },
   { name: "Charpente", desc: "Traitement préventif et curatif, renforcement, rénovation" },
-  { name: "Velux", desc: "Pose et remplacement de fenêtres de toit, étanchéité garantie" },
-  { name: "Urgence", desc: "Intervention rapide 24h/24 pour fuites et infiltrations" },
+  { name: "Velux", desc: "Pose et remplacement de fenêtres de toit" },
+  /*
+   * « Intervention rapide 24h/24 » sous-entendait une disponibilite 7j/7. La
+   * fiche d'etablissement indique dimanche ferme : on affiche BUSINESS.hours.
+   */
+  { name: "Urgence", desc: `Fuites et infiltrations — ${BUSINESS.hours.toLowerCase()}` },
 ];
 
+/*
+ * « +10 ans d'experience » etait exact, mais « depuis 2010 » est verifiable :
+ * creation au registre le 09/09/2010. On affiche donc BUSINESS.experience.
+ * Aucun label RGE ni Qualibat n'est affiche : LEGAL.isRGE vaut false, et aucune
+ * aide (MaPrimeRenov', CEE, TVA 5,5 %) n'est promise pour la meme raison.
+ */
 const reasons = [
-  { icon: MapPin, title: "Proximité", desc: "Basés à Écury-sur-Coole, intervention sous 2h à Châlons" },
-  { icon: Award, title: "+10 ans d'expérience", desc: "Une expertise solide dans la Marne" },
-  { icon: Shield, title: "Garantie décennale", desc: "Tous nos travaux sont garantis 10 ans" },
-  { icon: Clock, title: "Devis sous 24h", desc: "Étude gratuite et détaillée" },
+  {
+    icon: MapPin,
+    title: "Proximité",
+    desc: `Basés à ${BUSINESS.address.city}, aux portes de Châlons-en-Champagne`,
+  },
+  {
+    icon: Award,
+    title: `Artisan ${BUSINESS.experience}`,
+    desc: "Entreprise de couverture immatriculée dans la Marne",
+  },
+  { icon: Shield, title: "Garantie décennale", desc: "Attestation jointe à chaque devis" },
+  { icon: Clock, title: "Devis gratuit", desc: "Étude détaillée, sans engagement" },
 ];
 
 export function SeoContent() {
@@ -39,7 +62,7 @@ export function SeoContent() {
             {whyChalons.title}
           </h2>
           {whyChalons.paragraphs.map((p, i) => (
-            <p key={i} className="mb-4 text-lg leading-relaxed text-gray-600">
+            <p key={i} className="mb-4 text-lg leading-relaxed text-gray-700">
               {p}
             </p>
           ))}
@@ -62,7 +85,7 @@ export function SeoContent() {
                 className="group rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-orange-300 hover:shadow-lg"
               >
                 <h4 className="mb-2 font-bold text-gray-900">{service.name}</h4>
-                <p className="text-sm text-gray-600">{service.desc}</p>
+                <p className="text-sm text-gray-700">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -77,32 +100,38 @@ export function SeoContent() {
             {reasons.map((reason) => (
               <div key={reason.title} className="text-center">
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-orange-100">
-                  <reason.icon className="h-7 w-7 text-orange-500" />
+                  <reason.icon className="h-7 w-7 text-orange-700" aria-hidden="true" />
                 </div>
                 <h4 className="mb-2 font-bold text-gray-900">{reason.title}</h4>
-                <p className="text-sm text-gray-600">{reason.desc}</p>
+                <p className="text-sm text-gray-700">{reason.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-16 rounded-2xl bg-orange-500 p-8 text-center text-white">
+        <div className="mt-16 rounded-2xl bg-orange-700 p-8 text-center text-white">
           <h3 className="mb-4 text-2xl font-bold">
             Besoin d&apos;un couvreur à Châlons-en-Champagne ?
           </h3>
-          <p className="mb-6 text-white/90">
+          <p className="mb-6 text-orange-50">
             Contactez-nous pour un devis gratuit et sans engagement
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={BUSINESS.phoneHref}
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-bold text-orange-600 transition-colors hover:bg-gray-100"
+              className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-bold text-orange-700 transition-colors hover:bg-orange-50"
+              aria-label={`Appeler au ${BUSINESS.phone}`}
             >
-              <Phone className="h-5 w-5" />
+              <Phone className="h-5 w-5" aria-hidden="true" />
               {BUSINESS.phone}
             </a>
-            <Button href="/contact" variant="secondary" size="lg" className="bg-orange-600 text-white hover:bg-orange-700">
+            <Button
+              href="/contact"
+              variant="secondary"
+              size="lg"
+              className="bg-gray-900 text-white hover:bg-gray-800"
+            >
               Formulaire de contact
             </Button>
           </div>

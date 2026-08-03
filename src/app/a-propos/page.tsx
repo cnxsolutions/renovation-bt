@@ -3,30 +3,48 @@ import { CheckCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { BUSINESS } from "@/lib/constants";
 
+/**
+ * Ancien titre : « À propos de Rénovation BT » — 25 caracteres, sous la borne
+ * MET-005 (30-60), et il repetait l'enseigne que le gabarit du layout ajoute
+ * deja (« | Rénovation BT »). Nouveau titre : 39 caracteres, 55 en pleine
+ * longueur, et il porte l'anciennete, qui est le seul argument verifiable de
+ * la page (creation au registre le 09/09/2010 — voir BUSINESS.foundingDate).
+ *
+ * Retire de la description : « Garantie décennale » (LEGAL.decennale est
+ * entierement `null`, donc non verifiee) et « dans le Grand Est » (la region
+ * s'etend jusqu'a Strasbourg quand BUSINESS.serviceRadius vaut 60 km).
+ */
 export const metadata: Metadata = {
-  title: "À propos de Rénovation BT",
+  title: `À propos : artisan couvreur ${BUSINESS.experience}`,
   description:
-    "Artisan couvreur avec +10 ans d'expérience à Écury-sur-Coole (51). Garantie décennale, travail soigné, intervention rapide dans le Grand Est.",
+    "Artisan couvreur installé à Écury-sur-Coole (51) depuis 2010. Entreprise individuelle, travail soigné, devis gratuit dans la Marne et alentour.",
   alternates: { canonical: "/a-propos" },
 };
 
 const values = [
   {
-    title: "Expertise",
-    description: "Plus de 10 ans d'expérience dans les métiers de la toiture et de la rénovation.",
+    title: "Expérience",
+    /* Verifiable : immatriculation au registre national des entreprises le 09/09/2010. */
+    description: `Artisan couvreur ${BUSINESS.experience} dans les métiers de la toiture et de la rénovation.`,
   },
   {
-    title: "Qualité",
-    description: "Des matériaux premium et un savoir-faire artisanal pour des résultats durables.",
+    title: "Travail soigné",
+    /*
+     * « Des matériaux premium » a ete retire : aucune gamme, aucun fournisseur
+     * et aucun label ne vient l'etayer — c'est une affirmation de qualite
+     * invérifiable, du type que le moteur seo-guard releve en CNT.
+     */
+    description: "Un savoir-faire artisanal et des finitions soignées, chantier après chantier.",
   },
   {
     title: "Réactivité",
-    description: "Intervention rapide dans tout le Grand Est, devis gratuit sous 24h.",
+    description: `Intervention dans la Marne et les départements limitrophes, dans un rayon de ${BUSINESS.serviceRadius.value} km. Devis gratuit et sans engagement.`,
   },
   {
     title: "Transparence",
-    description: "Des tarifs clairs, un suivi de chantier régulier et le respect de votre budget.",
+    description: "Des tarifs affichés, un suivi de chantier régulier et le respect de votre budget.",
   },
 ];
 
@@ -46,10 +64,11 @@ export default function AProposPage() {
               À propos de <span className="text-orange-500">Rénovation BT</span>
             </h1>
             <p className="text-lg leading-relaxed text-gray-600">
-              Artisan couvreur passionné, installé à Écury-sur-Coole dans la Marne (51),
-              j&apos;interviens sur l&apos;ensemble du Grand Est pour vos travaux de toiture,
-              façade et gouttières. Mon engagement : un travail de qualité, dans les délais
-              et au juste prix.
+              Artisan couvreur installé à Écury-sur-Coole dans la Marne (51) {BUSINESS.experience},
+              j&apos;interviens à Châlons-en-Champagne et dans un rayon de{" "}
+              {BUSINESS.serviceRadius.value} km pour vos travaux de toiture, façade et
+              gouttières. Mon engagement : un travail soigné, dans les délais et au juste
+              prix.
             </p>
           </div>
 

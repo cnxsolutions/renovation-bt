@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "comment": "Dette SEO acceptee. Genere par « seo-guard baseline --write ». Les constats listes ici ne font pas echouer la barriere ; tout NOUVEAU constat, si. Retirer une cle d'ici revient a s'engager a la corriger.",
+  "counts": {
+    "total": 18,
+    "error": 1,
+    "warn": 17,
+    "info": 0
+  },
+  "byRule": {
+    "CNT-001": 2,
+    "LEG-001": 1,
+    "LNK-002": 3,
+    "SDA-003": 1,
+    "SDA-004": 11
+  },
+  "keys": [
+    "CNT-001\u0000/mentions-legales\u0000src/app/mentions-legales/page.tsx\u0000a completer",
+    "CNT-001\u0000/politique-confidentialite\u0000src/app/politique-confidentialite/page.tsx\u0000a completer",
+    "LEG-001\u0000/mentions-legales\u0000src/app/mentions-legales/page.tsx\u0000adresse de l'hebergeur",
+    "LNK-002\u0000/a-propos\u0000\u0000aucun lien entrant detecte",
+    "LNK-002\u0000/avis\u0000\u0000aucun lien entrant detecte",
+    "LNK-002\u0000/realisations\u0000\u0000aucun lien entrant detecte",
+    "SDA-003\u0000/\u0000src/app/page.tsx\u0000aucun balisage detecte (JSON-LD, microdonnees, RDFa)",
+    "SDA-004\u0000/conseils/ancien-nom-chalons-en-champagne\u0000src/app/conseils/ancien-nom-chalons-en-champagne/page.tsx\u0000type non declare",
+    "SDA-004\u0000/conseils/couvreurs-sont-ils-fiables\u0000src/app/conseils/couvreurs-sont-ils-fiables/page.tsx\u0000type non declare",
+    "SDA-004\u0000/conseils/duree-de-vie-toiture\u0000src/app/conseils/duree-de-vie-toiture/page.tsx\u0000type non declare",
+    "SDA-004\u0000/conseils/meilleure-periode-travaux-toiture\u0000src/app/conseils/meilleure-periode-travaux-toiture/page.tsx\u0000type non declare",
+    "SDA-004\u0000/conseils/prix-refaire-toiture-100m2\u0000src/app/conseils/prix-refaire-toiture-100m2/page.tsx\u0000type non declare",
+    "SDA-004\u0000/conseils/reconnaitre-bon-couvreur\u0000src/app/conseils/reconnaitre-bon-couvreur/page.tsx\u0000type non declare",
+    "SDA-004\u0000/conseils/tarif-horaire-couvreur\u0000src/app/conseils/tarif-horaire-couvreur/page.tsx\u0000type non declare",
+    "SDA-004\u0000/conseils/toiture-en-mauvais-etat-signes\u0000src/app/conseils/toiture-en-mauvais-etat-signes/page.tsx\u0000type non declare",
+    "SDA-004\u0000/conseils/trouver-artisan-couvreur\u0000src/app/conseils/trouver-artisan-couvreur/page.tsx\u0000type non declare",
+    "SDA-004\u0000/services\u0000src/app/services/page.tsx\u0000type non declare",
+    "SDA-004\u0000/tarifs\u0000src/app/tarifs/page.tsx\u0000type non declare"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "profile": "fr-local-service",
+
+  "site": {
+    "origin": "https://artisan-boisson-teddy.fr",
+    "trailingSlash": false,
+    "locale": "fr-FR",
+    "comment": "Origine VERIFIEE en production le 2026-08-03 : https://artisan-boisson-teddy.fr repond 200 (Vercel). Le domaine declare par SEO.siteUrl (src/lib/constants.ts:75), https://www.renovationbt-chalons.fr, repond 404 DEPLOYMENT_NOT_FOUND — il alimente pourtant metadataBase, les 21 canoniques, le sitemap et le robots.txt. Le site designe donc un domaine mort comme sa version de reference : c'est le defaut principal du dossier, pas une erreur de cette configuration. A regler separement : www et l'apex servent tous deux 200 avec le meme ETag, sans redirection — il faut une 308 de www vers l'apex au niveau Vercel."
+  },
+
+  "adapter": "next-app-router",
+
+  "nap": {
+    "name": "Rénovation BT",
+    "phones": ["+33761545343"],
+    "email": "contact@artisan-boisson-teddy.fr",
+    "address": {
+      "streetAddress": "43 Rue de Châlons-sur-Marne",
+      "addressLocality": "Écury-sur-Coole",
+      "addressRegion": "Grand Est",
+      "postalCode": "51240",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "latitude": 48.8967,
+      "longitude": 4.2822,
+      "comment": "Coordonnees d'Écury-sur-Coole (src/lib/constants.ts:18-21). Le layout racine declare une AUTRE position, geo.position 48.9566;4.3630 (Châlons-en-Champagne), src/app/layout.tsx:99. Une seule peut etre vraie."
+    },
+    "areaServedRadiusM": 150000,
+    "openingHours": "24/7",
+    "sameAs": [
+      "https://facebook.com/renovationbt",
+      "https://instagram.com/renovationbt",
+      "https://g.page/renovation-bt"
+    ]
+  },
+
+  "local": {
+    "expect24x7": true,
+    "comment": "Le site affirme « Ouvert 24h/24 et 7j/7 » (src/lib/constants.ts:22). Cette declaration active LOC-002, qui verifie que le balisage horaire ne contredit pas cette continuite. Si l'entreprise n'est PAS reellement joignable 24/7, ce n'est pas cette cle qu'il faut eteindre mais la promesse qu'il faut retirer du site."
+  },
+
+  "legal": {
+    "country": "FR",
+    "rcs": null,
+    "companyForm": null,
+    "publicationDirector": null,
+    "host": { "name": null, "address": null },
+    "comment": "Aucune mention de RCS, SIREN ou SIRET dans tout src/ (verifie par grep). Valeurs connues, vérifiées au registre : SIREN 524754280, SIRET siege 52475428000047, entrepreneur individuel, cree le 09/09/2010. ATTENTION a la reference : la LCEN a ete reecrite par la loi SREN n° 2024-449 du 21/05/2024 — les mentions legales relevent desormais de l'ARTICLE 1-1 (et les sanctions de l'article 1-2), l'ancien article 6 III n'existe plus. Le libelle « immatriculation RCS » de la regle LEG-001 est par ailleurs inadapte ici : un entrepreneur individuel prestataire de services n'est pas commercant, l'identifiant a publier est le numero RNE / secteur des metiers et de l'artisanat, c'est-a-dire le SIREN."
+  },
+
+  "aiSearch": { "policy": "allow-all" },
+
+  "rules": {
+    "disable": [],
+    "severityOverrides": {
+      "CNT-001": "warn"
+    },
+    "comment": "CNT-001 rétrogradée de « error » à « warn », PAS desactivee — elle continue d'apparaitre dans chaque rapport. Motif : les marqueurs « [À COMPLÉTER : ...] » de /tarifs, /mentions-legales, /politique-confidentialite et des deux pages ville sont DELIBERES. Ils rendent visibles les 18 informations que seul le gerant possede (taux horaire TTC, mediateur de la consommation, assureur decennal, telephone de l'hebergeur, chantiers locaux reels). Aucune formulation ne peut a la fois satisfaire l'arrete du 24/01/2017 — qui EXIGE le taux horaire sur le site — et masquer son absence : le manque est reel, et l'ecrire est plus honnete que de le taire. En « error », le hook d'ecriture bloquait toute modification ulterieure de ces cinq fichiers, ce qui rendait le chantier impraticable. A REMETTRE en « error » (ou simplement a retirer cette cle) le jour ou les 18 valeurs sont renseignees : la regle redeviendra alors un vrai garde-fou contre du lorem ipsum oublie."
+  }
+}

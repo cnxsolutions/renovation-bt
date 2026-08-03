@@ -5,10 +5,20 @@ import { CTABanner } from "@/components/sections/CTABanner";
 import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { AvantApres, SingleImage } from "@/components/ui/AvantApres";
 
+/**
+ * Titre inchange : 37 caracteres, 53 avec le gabarit du layout, donc dans la
+ * borne MET-005 (30-60).
+ *
+ * Description corrigee sur deux points : « Grand Est » (region qui va jusqu'a
+ * Strasbourg, alors que BUSINESS.serviceRadius vaut 60 km) et « Garantie
+ * décennale » (LEGAL.decennale est entierement `null`, donc non verifiee).
+ * Elle nomme desormais la ville ou les chantiers ci-dessous ont eu lieu, ce
+ * que les fichiers images confirment un par un.
+ */
 export const metadata: Metadata = {
   title: "Nos réalisations - Photos avant/après",
   description:
-    "Photos avant/après de nos chantiers : toiture, ravalement de façade, gouttières. Rénovation BT, artisan couvreur Grand Est. Garantie décennale.",
+    "Photos avant/après de chantiers menés à Châlons-en-Champagne : réfection de toiture, zinguerie, ravalement de façade. Rénovation BT, couvreur dans la Marne.",
   alternates: { canonical: "/realisations" },
 };
 
@@ -66,7 +76,7 @@ export default function RealisationsPage() {
         <Container>
           <SectionHeading
             title="Nos réalisations"
-            subtitle="Découvrez quelques-uns de nos chantiers récents dans le Grand Est."
+            subtitle="Quelques chantiers récents à Châlons-en-Champagne et dans la Marne."
             as="h1"
           />
 

@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
+/**
+ * Page 404.
+ *
+ * Titre volontairement court (16 caracteres) et SANS `alternates.canonical` :
+ * la page est servie en `index: false`, elle n'a donc aucune version de
+ * reference a designer, et les bornes de longueur de titre ne s'appliquent
+ * qu'aux pages destinees a etre indexees. `follow: true` est conserve pour que
+ * les liens du menu et du pied de page restent explores depuis une 404.
+ */
 export const metadata: Metadata = {
   title: "Page introuvable",
   robots: { index: false, follow: true },

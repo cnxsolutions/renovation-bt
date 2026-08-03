@@ -18,6 +18,8 @@ export function AvantApres({ avantSrc, apresSrc, alt, className = "" }: AvantApr
       <img
         src={avantSrc}
         alt={`${alt} - Avant`}
+        loading="lazy"
+        decoding="async"
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
           showApres ? "opacity-0" : "opacity-100"
         }`}
@@ -27,6 +29,8 @@ export function AvantApres({ avantSrc, apresSrc, alt, className = "" }: AvantApr
       <img
         src={apresSrc}
         alt={`${alt} - Après`}
+        loading="lazy"
+        decoding="async"
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
           showApres ? "opacity-100" : "opacity-0"
         }`}
@@ -35,21 +39,25 @@ export function AvantApres({ avantSrc, apresSrc, alt, className = "" }: AvantApr
       {/* Sélecteur */}
       <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 gap-2">
         <button
+          type="button"
           onClick={() => setShowApres(false)}
+          aria-pressed={!showApres}
           className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
             !showApres
-              ? "bg-orange-600 text-white shadow-md"
-              : "bg-white/80 text-gray-700 hover:bg-white"
+              ? "bg-orange-700 text-white shadow-md"
+              : "bg-white text-gray-800 hover:bg-gray-100"
           }`}
         >
           Avant
         </button>
         <button
+          type="button"
           onClick={() => setShowApres(true)}
+          aria-pressed={showApres}
           className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
             showApres
-              ? "bg-orange-600 text-white shadow-md"
-              : "bg-white/80 text-gray-700 hover:bg-white"
+              ? "bg-orange-700 text-white shadow-md"
+              : "bg-white text-gray-800 hover:bg-gray-100"
           }`}
         >
           Après
@@ -71,6 +79,8 @@ export function SingleImage({ src, alt, className = "" }: SingleImageProps) {
       <img
         src={src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         className="h-full w-full object-cover"
       />
     </div>
