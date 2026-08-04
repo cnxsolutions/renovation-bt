@@ -69,6 +69,55 @@ const nextConfig: NextConfig = {
         destination: "/services",
         permanent: true,
       },
+
+      /**
+       * INVENTAIRE COMPLET DE L'ANCIEN WORDPRESS.
+       *
+       * Releve exhaustif des URL archivees par la Wayback Machine entre le
+       * 2023-12-29 et le 2026-05-13, dernier etat du site sous WordPress :
+       * neuf URL en 200. Une seule etait redirigee (celle du devis, ci-dessus) ;
+       * les huit autres tombaient en 404, alors que plusieurs sont TOUJOURS
+       * indexees — verifie sur Bing et DuckDuckGo le 2026-08-04.
+       *
+       * Les quatre ci-dessous portent un contenu commercial reel et ont un
+       * equivalent exact sur le nouveau site. Elles sont donc redirigees.
+       */
+      {
+        // Page FAQ autonome ; la FAQ vit desormais dans l'accueil, ancre #faq.
+        source: "/faq",
+        destination: "/#faq",
+        permanent: true,
+      },
+      {
+        // Deux URL distinctes pour la meme prestation : le demoussage est
+        // decrit sous la famille « Couverture et toiture » de /services.
+        source: "/demoussage-a-chalons-en-champagne",
+        destination: "/services#toitures",
+        permanent: true,
+      },
+      {
+        source: "/demoussage-de-toit-a-chalons-en-champagne",
+        destination: "/services#toitures",
+        permanent: true,
+      },
+      {
+        source: "/peinture-facades-toiture-chalons-champagne",
+        destination: "/services#facades",
+        permanent: true,
+      },
+
+      /*
+       * NE PAS AJOUTER ICI les trois dernieres URL de l'ancien WordPress :
+       * /hello-world, /author/mathieu-gaugaingmail-com et
+       * /category/uncategorized.
+       *
+       * Ce sont des artefacts structurels de WordPress — l'article de
+       * demonstration, une page d'auteur, une categorie par defaut — sans
+       * aucun equivalent sur ce site. Google demande de rediriger vers une
+       * page PERTINENTE et, a defaut, de laisser repondre 404 : une
+       * redirection vers l'accueil serait lue comme un soft 404 et brouillerait
+       * le signal. Un 404 est ici la bonne reponse, et il se nettoie seul.
+       */
     ];
   },
 };
