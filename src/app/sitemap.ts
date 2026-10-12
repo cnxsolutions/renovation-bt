@@ -23,13 +23,7 @@ import { citiesWithPages } from "@/data/cities";
  * CE QUI A LE DROIT DE FIGURER ICI
  * --------------------------------
  * Uniquement des URLs INDEXABLES. `/mentions-legales` et
- * `/politique-confidentialite` sont servies en `robots: { index: false     '/couvreur-artisan-travaux-toiture-chalons-champagne': '2026-10-12',
-    '/couvreur-intervenant-marne-autour-chalons-champagne': '2026-10-12',
-    '/couvreur-ecury-sur-coole-chalons-champagne': '2026-10-12',
-    '/entretien-nettoyage-toiture-chalons-champagne': '2026-10-12',
-    '/couvreur-en-chalons-champagne': '2026-10-12',
-    '/en-demoussage-toiture-chalons-champagne': '2026-10-12',
-}` :
+ * `/politique-confidentialite` sont servies en `robots: { index: false }` :
  * les lister ici demandait a Google d'explorer des pages qu'on lui interdit
  * ensuite d'indexer, ce que la Search Console remontait en « Exclue par la
  * balise noindex ». Elles sont retirees. Avant d'ajouter une route ci-dessous,
