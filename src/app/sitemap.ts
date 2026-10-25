@@ -26,6 +26,7 @@ import { citiesWithPages } from "@/data/cities";
  * `/politique-confidentialite` sont servies en `robots: { index: false     '/couvreur-en-chalons-champagne': '2026-10-12',
     '/couvreur-marne-toiture-chalons-champagne': '2026-10-16',
     '/renovation-complete-toiture-chalons-champagne': '2026-10-22',
+    '/reparation-urgence-toiture-chalons-champagne': '2026-10-25',
 }` :
  * les lister ici demandait a Google d'explorer des pages qu'on lui interdit
  * ensuite d'indexer, ce que la Search Console remontait en « Exclue par la
