@@ -27,6 +27,7 @@ import { citiesWithPages } from "@/data/cities";
     '/couvreur-marne-toiture-chalons-champagne': '2026-10-16',
     '/renovation-complete-toiture-chalons-champagne': '2026-10-22',
     '/reparation-urgence-toiture-chalons-champagne': '2026-10-25',
+    '/demoussage-toiture-preventif-chalons-champagne': '2026-10-31',
 }` :
  * les lister ici demandait a Google d'explorer des pages qu'on lui interdit
  * ensuite d'indexer, ce que la Search Console remontait en « Exclue par la
