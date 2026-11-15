@@ -31,6 +31,7 @@ import { citiesWithPages } from "@/data/cities";
     '/zinguerie-gouttieres-chalons-champagne': '2026-11-03',
     '/urgence-fuite-toiture-chalons-champagne': '2026-11-06',
     '/devis-gratuit-couvreur-chalons-champagne': '2026-11-09',
+    '/zone-intervention-toiture-marne-chalons-champagne': '2026-11-15',
 }` :
  * les lister ici demandait a Google d'explorer des pages qu'on lui interdit
  * ensuite d'indexer, ce que la Search Console remontait en « Exclue par la
